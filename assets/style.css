@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+main .all-contain {
+  height: 80vh;
+  z-index: -10;
+}
+main .container {
+  width: 100vw;
+  height: 100vh;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
+  padding-top: 50vh;
+  color: white;
+  flex: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: 1s opacity;
+  z-index: -10;
+  overflow: hidden;
+}
+.container.active {
+  opacity: 1;
+  z-index: 10;
+}
+main .container .contain-main {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  transform: translateX(-20rem);
+  transition: 0.7s transform;
+  z-index: 10;
+}
+main .container.active .contain-main {
+  transform: translateX(0);
+}
+main .container .contain-main .tag {
+  font-family: "Kaushan Script", cursive;
+  width: unset;
+  color: white;
+  transition: 0.7s transform;
+}
+main .container .contain-main .title {
+  font-family: "Jost", sans-serif;
+  transition: 0.7s transform;
+}
+main .container .contain-main .subtitle {
+  font-family: "Jost", sans-serif;
+  color: rgb(221, 218, 218);
+  transition: 0.8s transform;
+}
+main .container .background {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  position: absolute;
+  height: 100vh;
+  z-index: -2;
+  top: 0;
+  margin: auto;
+  filter: brightness(65%) !important;
+  transition: filter 0.7s;
+}
+main .container .background img {
+  height: 100vh;
+  transition: filter 0.7s;
+}
+.shortcut .ph.more {
+  background-color: #e8ad64;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+main .container .contain-main .more {
+  color: #e8ad64;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1rem;
+  z-index: 10;
+  cursor: pointer;
+  transition: 0.8s transform;
+}
+main .container .gradient {
+  height: 55vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  padding-top: 5vh;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: -1;
+}
+main .container .text-more {
+  position: absolute;
+  background-color: white;
+  color: #030303;
+  font-family: "Jost", sans-serif;
+  text-align: justify;
+  transition: 0.8s transform;
+  overflow: scroll;
+}
+main .container .text-more.show {
+  transform: translateY(-85vh);
+}
+main .container .text-more .parags p {
+  margin: 0 0 10px;
+  text-indent: 30px;
+}
+main .container .text-more .back {
+  color: #e8ad64;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2rem;
+  cursor: pointer;
+  text-align: center;
+}
+main .shortcut {
+  display: flex;
+  flex-direction: row;
+  z-index: 99;
+  position: absolute;
+  margin-top: -0.5rem;
+  padding-left: 1.5rem;
+  transition: transform 0.7s;
+}
+main .shortcut .ph.show {
+  display: unset;
+}
+main .shortcut .ph img {
+  filter: brightness(60%);
+}
+main .shortcut .ph.more {
+  filter: brightness(100%);
+}
+main .shortcut .ph img.active {
+  filter: brightness(110%);
+}
+main .element {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  transform: translateY(-180vh);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  transition: transform 0.7s;
+}
+main .element .items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+  width: 100vw;
+}
+main .element .items .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+main .element .items .item img {
+  position: absolute;
+  filter: brightness(60%);
+}
+main .element .items .item h4 {
+  margin: auto;
+  z-index: 999;
+  font-family: "Jost", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+main .element .tag {
+  font-family: "Kaushan Script", cursive;
+  width: unset;
+  color: white;
+}
+main .element .back {
+  font-family: "Jost", sans-serif;
+  color: #e8ad64;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+/* responsive */
+@media screen and (max-width: 450px) {
+  main .container {
+    background-size: auto 100vh;
+    background-position-x: center;
+    background-position-y: unset;
+  }
+  main .container .contain-main .tag {
+    font-size: 20px;
+  }
+  main .container .contain-main .title {
+    font-size: 50px;
+    font-weight: 800;
+  }
+  main .container .contain-main .subtitle {
+    width: 20rem;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  main .container .text-more {
+    width: 100vw;
+    height: 80vh;
+    padding: 2rem 1.5rem 2rem;
+  }
+  .shortcut .ph {
+    margin: 2.5rem 0.5rem 1.2rem 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .shortcut .ph img {
+    height: 100px;
+  }
+  main .element {
+    height: 100vh;
+    width: 100vw;
+  }
+  main .element .items {
+    padding: 2rem 1.5rem 2rem;
+  }
+  main .element .items .item {
+    height: 23vh;
+    width: 40vw;
+    margin-top: 1rem;
+    border-radius: 20px;
+  }
+  main .element .items .item img {
+    width: 40vw;
+  }
+  main .element .items .item h4 {
+    bottom: 5px;
+    font-size: 1.5rem;
+  }
+  main .element .tag {
+    font-size: 2rem;
+    margin: 4rem auto 1rem;
+  }
+  main .element .back {
+    font-size: 18px;
+    margin: 0 auto 2rem;
+  }
+}
