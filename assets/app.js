@@ -86,8 +86,8 @@ container.forEach((con) => {
 });
 
 shortcutMore.addEventListener("click", () => {
-  conActive.querySelector(".contain-main").style.transform =
-    "translateX(-48vh)";
+  conActive.classList.remove("active");
+  conActive.classList.add("onshow");
   shortcut.style.transform = "translateY(25vh)";
   conActive.querySelector(".background img").style.filter = "blur(7px)";
   element.style.transform = "translateY(-80vh)";
@@ -95,7 +95,8 @@ shortcutMore.addEventListener("click", () => {
 
 let elementBack = element.querySelector(".back");
 elementBack.addEventListener("click", () => {
-  conActive.querySelector(".contain-main").style.transform = "translateX(0)";
+  conActive.classList.remove("onshow");
+  conActive.classList.add("active");
   shortcut.style.transform = "translateY(0)";
   conActive.querySelector(".background img").style.filter = "blur(0)";
   element.style.transform = "translateY(-180vh)";
@@ -104,7 +105,8 @@ elementBack.addEventListener("click", () => {
 let elementItems = element.querySelectorAll(".items .item");
 elementItems.forEach((item) => {
   item.addEventListener("click", () => {
-    conActive.querySelector(".contain-main").style.transform = "translateX(0)";
+    conActive.classList.remove("onshow");
+    conActive.classList.add("active");
     shortcut.style.transform = "translateY(0)";
     conActive.querySelector(".background img").style.filter = "blur(0)";
     element.style.transform = "translateY(-180vh)";

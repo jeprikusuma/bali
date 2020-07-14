@@ -34,12 +34,16 @@ main .container {
   opacity: 1;
   z-index: 10;
 }
+.container.onshow {
+  opacity: 1;
+  z-index: 10;
+}
 main .container .contain-main {
   height: 55vh;
   display: flex;
   flex-direction: column;
   padding-left: 1.5rem;
-  transform: translateX(-20rem);
+  transform: translateX(-48rem);
   transition: 0.7s transform;
   z-index: 10;
 }
@@ -78,6 +82,8 @@ main .container .background img {
   transition: filter 0.7s;
 }
 .shortcut .ph.more {
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
   background-color: #e8ad64;
   display: flex;
   justify-content: center;
