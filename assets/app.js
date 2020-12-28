@@ -25,6 +25,12 @@ shortcutImg.forEach((sc) => {
   });
 });
 
+if(screen.width > 600){
+  allContainer.innerHTML = "<h2 style='margin: auto'>Sorry, please acces from smartphone</h2>"
+  shortcut.innerHTML = ""
+  element.innerHTML = ""
+}
+
 container.forEach((con) => {
   let title = con.querySelector(".contain-main .title"),
     tag = con.querySelector(".contain-main .tag"),
